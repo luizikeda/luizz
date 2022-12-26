@@ -12,7 +12,7 @@ public class IndexModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
 
     @NotNull(message = "O email é obrigatório")
     private String email;
@@ -114,11 +114,11 @@ public class IndexModel {
         this.cep = cep;
     }
 
-    public Long getCodigo() {
-        return codigo;
+    public Long getId() {
+        return id;
     }
 
-    public void setCodigo(Long codigo) {
-        this.codigo = codigo;
+    public void setId(Long id) {
+        this.id = id;
     }
 }
