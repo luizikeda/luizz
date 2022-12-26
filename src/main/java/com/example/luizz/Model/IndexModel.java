@@ -1,11 +1,9 @@
 package com.example.luizz.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -13,26 +11,114 @@ import java.util.Date;
 public class IndexModel {
 
     @Id
-    @Column(name = "id")
-    private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy hh:mm:ss")
-    @Column(name = "dtcriacao")
-    private Date dtcricao;
+    @NotNull(message = "O email é obrigatório")
+    private String email;
 
-    public Long getId() {
-        return Id;
+    @NotNull(message = "A senha é obrigatória")
+    private String senha;
+
+    @NotNull(message = "O endereço é obrigatório")
+    private String endereco;
+
+    @NotNull(message = "O número é obrigatório")
+    private String numero;
+
+    @NotNull(message = "O CPF é obrigatório")
+    private String cpf;
+
+    @NotNull(message = "O telefone é obrigatório")
+    private String telefone;
+
+    @NotNull(message = "A cidade é obrigatório")
+    private String cidade;
+
+    @NotNull(message = "O estado é obrigatório")
+    private String estado;
+
+    @NotNull(message = "O CEP é obrigatório")
+    private String cep;
+
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Long id) {
-        Id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Date getDtcricao() {
-        return dtcricao;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setDtcricao(Date dtcricao) {
-        this.dtcricao = dtcricao;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 }
