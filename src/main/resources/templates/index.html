@@ -29,7 +29,7 @@
     </div>
     <div class="col-md-6">
         <label for="cpf" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="cpf" th:field="*{cpf}">
+        <input type="text" class="form-control js-phone-number" id="cpf" th:field="*{cpf}">
     </div>
     <div class="col-md-4">
         <label for="telefone" class="form-label">Telefone</label>
@@ -58,6 +58,8 @@
         <button type="submit" class="btn btn-primary">Criar</button>
     </div>
 </form>
+
+<script th:src="@{/javascripts/cliente.mascara-cpf-.js}"></script>
 
 </body>
 </html>

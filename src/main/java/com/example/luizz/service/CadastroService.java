@@ -19,8 +19,6 @@ public class CadastroService {
     @Transactional
     public void salvar(IndexModel index) {
         indexDAO.save(index);
-
-        publisher.publishEvent(new CadastroSalvoEvent(index));
     }
 
 }
