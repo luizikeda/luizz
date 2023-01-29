@@ -30,16 +30,18 @@
     </div>
 
     <div class="col-md-6">
-    <label for="estado" class="form-label">estado</label>
-    <input type="text" class="form-control" id="estado" th:field="*{estado}">
+        <label for="dataNascimento" class="form-label">Data de nascimento</label>
+        <input type="date" class="form-control" id="dataNascimento" th:field="*{dataNascimento}">
     </div>
-    <!--<div class="col-md-4">
-        <label for="estado" class="form-label">Estado</label>
-        <select id="estado" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
+
+    <div class="col-sm-3">
+        <label for="comAcao">Estados</label>
+        <select class="form-control select2" id="comAcao" style="width: 100%;">
+            <option th:value="${estados.id}"
+                    th:each="estados : ${todosEstados}"
+                    th:text="${estados.descricao}"></option>
         </select>
-    </div>-->
+    </div>
     <div class="col-md-6">
         <label for="cep" class="form-label">CEP</label>
         <input type="text" class="form-control" id="cep" th:field="*{cep}">

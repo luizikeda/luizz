@@ -23,6 +23,8 @@ public class ClienteModel {
     @NotBlank(message = "O telefone é obrigatório")
     private String telefone;
 
+    @NotBlank(message = "A data é obrigatória")
+    private String dataNascimento;
 
     @NotBlank(message = "O estado é obrigatório")
     private String estado;
@@ -61,6 +63,14 @@ public class ClienteModel {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getEstado() {
