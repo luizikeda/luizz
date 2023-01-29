@@ -23,7 +23,7 @@ public class ClienteController {
     @Autowired
     private CadastroService cadastroService ;
 
-    @RequestMapping
+    @GetMapping("/novo")
     public ModelAndView novo(ClienteModel clienteModel) {
         ModelAndView mv = new ModelAndView("usuario/form_cliente");
         mv.addObject("clienteModel", clienteModel);
@@ -40,13 +40,5 @@ public class ClienteController {
         attributes.addFlashAttribute("mensagem", "Cadastro salvo com sucesso!");
         return new ModelAndView("redirect:/cliente");
     }
-
-    @GetMapping
-    public ModelAndView  {
-        ModelAndView mv = new ModelAndView("usuario/form_cliente");
-        mv.addObject("clienteModel", clienteModel);
-        return mv;
-    }
-
 
 }
