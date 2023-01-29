@@ -1,8 +1,8 @@
-package com.example.luizz.controller;
+package com.example.ikeda.controller;
 
-import com.example.luizz.DAO.IndexDAO;
-import com.example.luizz.Model.IndexModel;
-import com.example.luizz.service.CadastroService;
+import com.example.ikeda.DAO.IndexDAO;
+import com.example.ikeda.Model.IndexModel;
+import com.example.ikeda.service.CadastroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

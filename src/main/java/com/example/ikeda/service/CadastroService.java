@@ -1,7 +1,7 @@
-package com.example.luizz.service;
+package com.example.ikeda.service;
 
-import com.example.luizz.DAO.IndexDAO;
-import com.example.luizz.Model.IndexModel;
+import com.example.ikeda.DAO.IndexDAO;
+import com.example.ikeda.Model.IndexModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;

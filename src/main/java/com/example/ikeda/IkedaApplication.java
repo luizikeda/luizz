@@ -1,13 +1,13 @@
-package com.example.luizz;
+package com.example.ikeda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LuizzApplication {
+public class IkedaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LuizzApplication.class, args);
+        SpringApplication.run(IkedaApplication.class, args);
     }
 
 }

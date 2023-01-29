@@ -1,10 +1,10 @@
-package com.example.luizz;
+package com.example.ikeda;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LuizzApplicationTests {
+class IkedaApplicationTests {
 
     @Test
     void contextLoads() {

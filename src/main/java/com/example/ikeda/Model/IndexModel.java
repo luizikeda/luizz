@@ -1,7 +1,7 @@
-package com.example.luizz.Model;
+package com.example.ikeda.Model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "index")
@@ -11,31 +11,23 @@ public class IndexModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "O email é obrigatório")
+    @NotBlank(message = "O email é obrigatório")
     private String email;
 
-    @NotNull(message = "A senha é obrigatória")
+    @NotBlank(message = "A senha é obrigatória")
     private String senha;
 
-    @NotNull(message = "O endereço é obrigatório")
-    private String endereco;
-
-    @NotNull(message = "O número é obrigatório")
-    private String numero;
-
-    @NotNull(message = "O CPF é obrigatório")
+    @NotBlank(message = "O CPF é obrigatório")
     private String cpf;
 
-    @NotNull(message = "O telefone é obrigatório")
+    @NotBlank(message = "O telefone é obrigatório")
     private String telefone;
 
-    @NotNull(message = "A cidade é obrigatório")
-    private String cidade;
 
-    @NotNull(message = "O estado é obrigatório")
+    @NotBlank(message = "O estado é obrigatório")
     private String estado;
 
-    @NotNull(message = "O CEP é obrigatório")
+    @NotBlank(message = "O CEP é obrigatório")
     private String cep;
 
 
@@ -55,22 +47,6 @@ public class IndexModel {
         this.senha = senha;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
     public String getCpf() {
         return cpf;
     }
@@ -85,14 +61,6 @@ public class IndexModel {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     public String getEstado() {

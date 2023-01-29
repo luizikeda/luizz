@@ -1,6 +1,6 @@
-package com.example.luizz.DAO;
+package com.example.ikeda.DAO;
 
-import com.example.luizz.Model.IndexModel;
+import com.example.ikeda.Model.IndexModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
