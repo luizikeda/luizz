@@ -26,7 +26,7 @@ public class ClienteModel {
     @NotBlank(message = "A data é obrigatória")
     private String dataNascimento;
 
-    @NotBlank(message = "O estado é obrigatório")
+
     private String estado;
 
     @NotBlank(message = "O CEP é obrigatório")
