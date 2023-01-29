@@ -1,7 +1,7 @@
 package com.example.ikeda.controller;
 
-import com.example.ikeda.DAO.IndexDAO;
-import com.example.ikeda.Model.IndexModel;
+import com.example.ikeda.DAO.ClienteDAO;
+import com.example.ikeda.Model.ClienteModel;
 import com.example.ikeda.service.CadastroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,30 +13,32 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/index")
-public class IndexController {
+@RequestMapping("/cliente")
+public class ClienteController {
 
     @Autowired
-    private IndexDAO indexDAO;
+    private ClienteDAO clienteDAO;
 
     @Autowired
     private CadastroService cadastroService ;
 
     @RequestMapping
-    public ModelAndView novo(IndexModel indexModel) {
-        ModelAndView mv = new ModelAndView("index");
-        mv.addObject("indexModel", indexModel);
+    public ModelAndView novo(ClienteModel clienteModel) {
+        ModelAndView mv = new ModelAndView("usuario/form_cliente");
+        mv.addObject("clienteModel", clienteModel);
         return mv;
     }
 
     @PostMapping(value = "/novo")
-    public ModelAndView cadastrar(@Valid IndexModel index, BindingResult result, RedirectAttributes attributes) {
+    public ModelAndView cadastrar(@Valid ClienteModel clienteModel, BindingResult result, RedirectAttributes attributes) {
         if (result.hasErrors()) {
-            return novo(index);
+            return novo(clienteModel);
         }
 
-        cadastroService.salvar(index);
+        cadastroService.salvar(clienteModel);
         attributes.addFlashAttribute("mensagem", "Cadastro salvo com sucesso!");
-        return new ModelAndView("redirect:/index");
+        return new ModelAndView("redirect:/cliente/novo");
     }
+
+
 }

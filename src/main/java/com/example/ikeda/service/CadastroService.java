@@ -1,7 +1,7 @@
 package com.example.ikeda.service;
 
-import com.example.ikeda.DAO.IndexDAO;
-import com.example.ikeda.Model.IndexModel;
+import com.example.ikeda.DAO.ClienteDAO;
+import com.example.ikeda.Model.ClienteModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -11,14 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class CadastroService {
 
     @Autowired
-    private IndexDAO indexDAO;
-
-    @Autowired
-    private ApplicationEventPublisher publisher;
+    private ClienteDAO clienteDAO;
 
     @Transactional
-    public void salvar(IndexModel index) {
-        indexDAO.save(index);
+    public void salvar(ClienteModel clienteModel) {
+        clienteDAO.save(clienteModel);
     }
 
 }
