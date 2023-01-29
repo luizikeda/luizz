@@ -11,7 +11,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <body>
 
-<form class="row" method="post" id="salvar" th:action="@{/index/novo}" th:object="${indexModel}">
+<form class="row" method="post" id="salvar" th:action="@{/cliente/novo}" th:object="${clienteModel}">
     <div class="col-md-12">
         <label for="email" class="form-label">E-mail</label>
         <input type="email" class="form-control" id="email" autofocus="autofocus" th:field="*{email}">

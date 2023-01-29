@@ -37,7 +37,7 @@ public class ClienteController {
 
         cadastroService.salvar(clienteModel);
         attributes.addFlashAttribute("mensagem", "Cadastro salvo com sucesso!");
-        return new ModelAndView("redirect:/cliente/novo");
+        return new ModelAndView("redirect:/cliente");
     }
 
 
