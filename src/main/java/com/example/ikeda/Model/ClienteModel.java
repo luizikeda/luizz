@@ -1,5 +1,7 @@
 package com.example.ikeda.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -24,9 +26,10 @@ public class ClienteModel {
     private String telefone;
 
     @NotBlank(message = "A data é obrigatória")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private String dataNascimento;
 
-
+    @NotBlank(message = "O estado é obrigatório")
     private String estado;
 
     @NotBlank(message = "O CEP é obrigatório")

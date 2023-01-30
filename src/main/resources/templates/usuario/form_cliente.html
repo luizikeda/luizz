@@ -16,14 +16,17 @@
         <label for="email" class="form-label">E-mail</label>
         <input type="email" class="form-control" id="email" autofocus="autofocus" th:field="*{email}">
     </div>
+
     <div class="col-md-12">
         <label for="senha" class="form-label">Senha</label>
         <input type="password" class="form-control" id="senha" th:field="*{senha}">
     </div>
+
     <div class="col-md-6">
         <label for="cpf" class="form-label">CPF</label>
         <input type="text" class="form-control js-phone-number" id="cpf" th:field="*{cpf}">
     </div>
+
     <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
         <input type="text" class="form-control" id="telefone" th:field="*{telefone}">
@@ -42,6 +45,7 @@
                     th:text="${estados.descricao}"></option>
         </select>
     </div>
+
     <div class="col-md-6">
         <label for="cep" class="form-label">CEP</label>
         <input type="text" class="form-control" id="cep" th:field="*{cep}">
@@ -51,17 +55,9 @@
     </div>
 </form>
 
-<script>
-    $("#telefone").mask("(99) 99999-9999");
-
-    $("#cep").mask("99999-999");
-
-    $("#cpf").mask("999.999.999-99");
-
-   /* $("#cnpj").mask("99.999.999/9999-99");
-
-    $("#data").mask("99/99/9999");*/
-</script>
+<th:block layout:fragment="javascript-extra">
+    <script th:src="@{/assets/js/form_cliente.js}"></script>
+</th:block>
 
 </body>
 </html>

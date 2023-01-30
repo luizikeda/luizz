@@ -19,7 +19,7 @@ public class ClienteDTO {
 
     String telefone;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     Date data_nascimento;
 
     public ClienteDTO(Object[] obj) throws ParseException {

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -50,7 +49,7 @@ public class ClienteController {
 
         cadastroService.salvar(clienteModel);
         attributes.addFlashAttribute("mensagem", "Cadastro salvo com sucesso!");
-        return new ModelAndView("redirect:/cliente/novo");
+        return new ModelAndView("redirect:/cliente");
     }
 
     @ModelAttribute("todosEstados")
@@ -70,8 +69,8 @@ public class ClienteController {
             @JsonProperty("email")String email
     ) throws Exception{
         List<Object[]> data = clienteDAO.getListarClientes(
-            cpf,
-            email
+                cpf,
+                email
         );
         List<ClienteDTO> ldto = new ArrayList<>();
 

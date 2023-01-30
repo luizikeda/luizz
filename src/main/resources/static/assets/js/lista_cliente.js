@@ -8,8 +8,8 @@ const filtrar = () => {
         email: $('#email').val(),
     }
 
-    $('#').DataTable().destroy();
-    $('#').DataTable()({
+    $('#tabelaClientes').DataTable().destroy();
+    $('#tabelaClientes').DataTable()({
         buttons: [{'extend': 'print', 'text': 'Imprimir Dados', 'className': 'btn btn-default'}],
     ajax: {
             url: '/cliente/filtrar',

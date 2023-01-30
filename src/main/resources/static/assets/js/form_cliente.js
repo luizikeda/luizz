@@ -8,15 +8,8 @@ $(document).ready(function(){
     //CPF
     $("#cpf").mask("999.999.999-99");
 
-   /* //CNPJ
-    $("#cnpj").mask("99.999.999/9999-99");
-
     //Data
-    $("#data").mask("99/99/9999");
+    $("#data").mask("dd/MM/yyyy");
 
-    //Dinheiro
-    $('#dinheiro1').mask('000.000.000.000.000,00' , { reverse : true});
-
-    $('#dinheiro2').mask("#.##0,00" , { reverse:true});*/
 });
 
