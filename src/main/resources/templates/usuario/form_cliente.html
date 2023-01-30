@@ -4,6 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <head>
+    <header th:replace="fragments/headerimport.html :: headerimport"></header>
     <meta charset="UTF-8">
     <title>Banco de dados</title>
 </head>
@@ -56,7 +57,8 @@
 </form>
 
 <th:block layout:fragment="javascript-extra">
-    <script th:src="@{/js/form_cliente.js}"></script>
+    <script th:src="@{/frontjs/form_cliente.js}"></script>
+    <div th:replace="fragments/footerimport.html :: footerimport"></div>
 </th:block>
 
 </body>

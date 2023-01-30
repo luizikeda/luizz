@@ -1,0 +1,10 @@
+.tabela-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dt-buttons{
+    margin-left: 15px;
+}
