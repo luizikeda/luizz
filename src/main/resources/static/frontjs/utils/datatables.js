@@ -1,35 +1,18 @@
-function limpar(){
-    window.location.reload();
-}
+function datatable(tabela){
+    var table = $(tabela);
 
-function filtrar() {
-    let data = {
-        cpf: $('#cpf').val(),
-        email: $('#email').val(),
-    }
-
-    console.log(data.cpf)
-
-    $('#tabelaClientes').DataTable().destroy();
-    $('#tabelaClientes').DataTable()({
-        dom: 'r<"tabela-header"<l><"tabela-header"fB>>tip',
-        buttons: [{'extend': 'print', 'text': 'Imprimir Dados', 'className': 'btn btn-default'}],
-    ajax: {
-            url: '/cliente/filtrar',
-            type: 'GET',
-            async: true,
-            dataSrc: '',
-            data: data
-    },
-        columns: [
-            {data: 'cep'},
-            {data: 'cpf'},
-            {data: 'email'},
-            {data: 'estado'},
-            {data: 'telefone'},
-            {data: 'data_nascimento'},
-        ],
-        language: {
+    table.DataTable({
+        fixedHeader: {
+            header: true,
+            footer: false
+        },
+        'paging': true,
+        'searching': false,
+        'ordering': true,
+        'iDisplayLength': 10,
+        'info': true,
+        'autoWidth': false,
+        "language": {
             "sEmptyTable": "Nenhum registro encontrado",
             "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
             "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
@@ -52,5 +35,5 @@ function filtrar() {
                 "sSortDescending": ": Ordenar colunas de forma descendente"
             }
         }
-    })
+    });
 }

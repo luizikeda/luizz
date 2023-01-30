@@ -84,7 +84,7 @@
                                                 <div class="col-sm-4">
                                                     <div style="margin-top: 11px;">
                                                         <div class="btn-group">
-                                                            <button onclick="filtrar"
+                                                            <button onclick="filtrar()"
                                                                     style="margin-top: 14px; margin-bottom:14px;"
                                                                     type="button"
                                                                     class="btn btn-primary">Pesquisar
@@ -125,10 +125,10 @@
         </table>
     </div>
 
-<th:block layout:fragment="javascript-extra">
-    <script th:src="@{/frontjs/lista_cliente.js}"></script>
-    <div th:replace="fragments/footerimport.html :: footerimport"></div>
-</th:block>
+    <th:block layout:fragment="javascript-extra">
+        <script th:src="@{/frontjs/lista_cliente.js}"></script>
+        <div th:replace="fragments/footerimport.html :: footerimport"></div>
+    </th:block>
 
 </div>
 </body>
