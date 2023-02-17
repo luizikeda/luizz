@@ -20,9 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/cliente")
@@ -63,7 +61,7 @@ public class ClienteController {
         return mv;
     }
 
-    @GetMapping(value = "/filtrar")
+    /*@GetMapping(value = "/filtrar")
     public ResponseEntity listarClientes(
             @JsonProperty("cpf")String cpf,
             @JsonProperty("email")String email
@@ -79,5 +77,25 @@ public class ClienteController {
             ldto.add(dto);
         }
         return new ResponseEntity(ldto, HttpStatus.OK);
+    }*/
+
+    @GetMapping(value = "/filtrar")
+    public ResponseEntity listarClientes() {
+        try {
+            List<ClienteDTO> clienteDTOList = new ArrayList<>();
+            List<Object[]> objects = clienteDAO.getListarClientes();
+            for (Object[] obj : objects) {
+                ClienteDTO iDto = new ClienteDTO(obj);
+                clienteDTOList.add(iDto);
+            }
+            Map<String, Object> json = new LinkedHashMap<>();
+            json.put("data", clienteDTOList);
+
+            return new ResponseEntity(json, HttpStatus.OK);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

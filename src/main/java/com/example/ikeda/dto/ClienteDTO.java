@@ -15,20 +15,17 @@ public class ClienteDTO {
 
     String email;
 
-    String estado;
-
     String telefone;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
     Date data_nascimento;
 
     public ClienteDTO(Object[] obj) throws ParseException {
-        this.cep = Objects.nonNull(obj[0]) ? obj.toString() : "";
-        this.cpf = Objects.nonNull(obj[1]) ? obj.toString() : "";
-        this.email = Objects.nonNull(obj[2]) ? obj.toString() : "";
-        this.estado = Objects.nonNull(obj[3]) ? obj.toString() : "";
-        this.telefone = Objects.nonNull(obj[4]) ? obj.toString() : "";
-        this.data_nascimento = Objects.isNull(obj[5]) ? null : new SimpleDateFormat("yyyy-MM-dd").parse(obj[5].toString());
+        this.cep = obj[0].toString();
+        this.cpf = obj[1].toString();
+        this.email = obj[2].toString();
+        this.telefone = obj[3].toString();
+        this.data_nascimento = Objects.isNull(obj[4]) ? null : new SimpleDateFormat("yyyy-MM-dd").parse(obj[4].toString());
     }
 
     public String getCep() {
@@ -53,14 +50,6 @@ public class ClienteDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public String getTelefone() {

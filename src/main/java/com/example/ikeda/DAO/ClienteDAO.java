@@ -12,11 +12,11 @@ import java.util.List;
 public interface ClienteDAO extends CrudRepository<ClienteModel, Long>{
 
     @Query(nativeQuery = true, value = "" +
-    "select c.cep, c.cpf, c.email, c.estado, c.telefone, c.data_nascimento from cliente c\n" +
-            "where upper(c.email) like upper(concat('%', :email, '%'))\n" +
-            "and upper(c.cpf) like upper(concat('%', :cpf, '%'))")
+    "select c.cep, c.cpf, c.email, c.telefone, c.data_nascimento from cliente c\n"
+            /*"where upper(c.email) like upper(concat('%', :email, '%'))\n" +
+            "and upper(c.cpf) like upper(concat('%', :cpf, '%'))"*/)
     List<Object[]>getListarClientes(
-            @Param("cpf") String cpf,
-            @Param("email") String email
+           /* @Param("cpf") String cpf,
+            @Param("email") String email*/
     );
 }

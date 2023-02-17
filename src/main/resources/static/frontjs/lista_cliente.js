@@ -1,4 +1,4 @@
-function limpar(){
+function limpar() {
     window.location.reload();
 }
 
@@ -8,27 +8,23 @@ function filtrar() {
         email: $('#email').val(),
     }
 
-    console.log(data.cpf)
+    let tabela = $('#tabelaClientes');
 
-    $('#tabelaClientes').DataTable().destroy();
-    $('#tabelaClientes').DataTable()({
-        dom: 'r<"tabela-header"<l><"tabela-header"fB>>tip',
-        buttons: [{'extend': 'print', 'text': 'Imprimir Dados', 'className': 'btn btn-default'}],
-    ajax: {
+    tabela.DataTable({
+        serverSide: false,
+        paging: true,
+        searching: false,
+        autoWidth: false,
+        ajax: {
             url: '/cliente/filtrar',
-            type: 'GET',
-            async: true,
-            dataSrc: '',
-            data: data
-    },
+        },
         columns: [
-            {data: 'cep'},
-            {data: 'cpf'},
-            {data: 'email'},
-            {data: 'estado'},
-            {data: 'telefone'},
-            {data: 'data_nascimento'},
-        ],
+        {data: 'cep'},
+        {data: 'cpf'},
+        {data: 'email'},
+        {data: 'telefone'},
+        {data: 'data_nascimento'},
+    ],
         language: {
             "sEmptyTable": "Nenhum registro encontrado",
             "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -51,6 +47,6 @@ function filtrar() {
                 "sSortAscending": ": Ordenar colunas de forma ascendente",
                 "sSortDescending": ": Ordenar colunas de forma descendente"
             }
-        }
-    })
+    }
+})
 }
